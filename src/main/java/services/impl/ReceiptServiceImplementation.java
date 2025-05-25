@@ -13,7 +13,6 @@ public class ReceiptServiceImplementation implements ReceiptService {
     private final String RECEIPT_DIR = "receipts";
 
     public ReceiptServiceImplementation() {
-        // Ensure the receipts directory exists
         File directory = new File(RECEIPT_DIR);
         if (!directory.exists()) {
             directory.mkdirs();

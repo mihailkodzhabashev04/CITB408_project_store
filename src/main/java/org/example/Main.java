@@ -51,7 +51,6 @@ public class Main {
             System.err.println("Sale failed: " + e.getMessage());
         }
 
-        // Summary
         System.out.println("\n=== Store Summary ===");
         System.out.println("Expenses: " + store.calculateExpenses());
         System.out.println("Revenue: " + store.calculateRevenue());

@@ -59,8 +59,8 @@ public class StoreTest {
 
     @Test
     public void testInsufficientStockThrowsException() {
-        Product milk = store.getProducts().get(1);  // Only 10 available
-        SoldItem item = new SoldItem(milk, 20);     // Requesting more
+        Product milk = store.getProducts().get(1);
+        SoldItem item = new SoldItem(milk, 20);
 
         Exception exception = assertThrows(
                 InsufficientStockException.class,
@@ -101,11 +101,11 @@ public class StoreTest {
     @Test
     public void testInsufficientFundsThrowsException() {
         Product milk = store.getProducts().get(1);
-        SoldItem item = new SoldItem(milk, 2);  // Enough quantity, but we give less money
+        SoldItem item = new SoldItem(milk, 2);
 
         Exception exception = assertThrows(
                 InsufficientFundsException.class,
-                () -> store.sellProducts(Arrays.asList(item), 1, 0.5)  // Not enough money
+                () -> store.sellProducts(Arrays.asList(item), 1, 0.5)
         );
 
         assertTrue(exception.getMessage().contains("Insufficient funds"));
@@ -119,7 +119,7 @@ public class StoreTest {
         SoldItem item = new SoldItem(nearExpiry, 1);
         store.sellProducts(Arrays.asList(item), 1, 100.0);
 
-        double expectedPrice = 10.0 * (1 + 0.20) * (1 - 0.15);  // markup + discount
+        double expectedPrice = 10.0 * (1 + 0.20) * (1 - 0.15);
         assertEquals(expectedPrice, item.getSalePricePerUnit(), 0.01);
     }
 
