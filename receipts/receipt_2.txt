@@ -1,0 +1,6 @@
+Receipt #2
+Cashier: Kasierka Kasierova
+Date: 2025-05-25T17:56:47.030658600
+Items:
+- Yogurt x1 @ 10.2
+Total: $10.20
